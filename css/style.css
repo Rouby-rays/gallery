@@ -1,0 +1,287 @@
+body {
+  box-sizing: border-box;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 50px repeat(3, 1fr);
+  column-gap: 1em;
+  background-color: #ecf0f1; 
+  font-family: 'Rubik', sans-serif;
+}
+
+.page-header {
+  grid-column: 1 / -1;	
+  margin: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #34495e;    
+}
+
+.burger-menu {
+  width: 20px;
+  height: 16px;
+  margin-left: 20px;
+  margin-right: 40px;
+  cursor: pointer;
+}
+
+.burger-menu-button {
+  position: relative;
+  top: 50%;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 2px;
+ 
+  background-color: white;  
+}
+
+.burger-menu-button::after,
+.burger-menu-button::before {
+  content: "";
+  width: 20px;
+  height: 2px;
+  position: absolute;
+  background-color: white;    
+}
+
+.burger-menu-button::before {
+   top: 5px; 	
+}
+
+.burger-menu-button::after {
+  top: -5px;	
+}
+
+.burger-menu__panel {
+  display: block;
+  position: absolute;
+  background-color: #34495e; 
+  z-index: 1000;
+  transform: translateX(-200px);
+  transition-property: transform;
+  transition-duration: 500ms;
+  
+}
+
+.active {
+  transform: translateX(10px);
+}
+
+.burger-menu__panel ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.burger-menu__panel li {
+  
+}
+
+.burger-menu__panel a {
+  display: block;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+ul.main-menu,
+ul.sub-menu {
+  padding: 0;
+  height: 100%; 
+  list-style: none;
+  display: flex;
+  align-items: center; 
+}
+
+.main-menu > li {
+  margin-right: 15px;
+  display: inline-block;
+  height: 100%;  
+ }
+ 
+.main-menu > li:last-child {
+  margin-right: 0; 
+ }
+ 
+.main-menu > li:hover {
+  background-color: #263646;
+}
+
+.main-menu li a {
+  display: block;
+  margin: 15px 5px;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+} 
+
+
+.main {
+  position: relative;
+  margin-top: 30px;
+  margin-left: 20px;
+  
+  grid-column: 1 / -2;
+  grid-rows: 2 / 4;
+ }
+ 
+ h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background-color: #dde6eb; 
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #34495e;
+ }
+ 
+ .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: #ffffff; 
+  border: 1px solid #E8E6E5;
+ }
+ 
+.item {
+  margin: 20px;
+} 
+ 
+.item img {
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+  border: 1px solid #E8E6E5;
+} 
+
+.item a {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #f1f1f1;
+  text-decoration: none;
+  color: #848484;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+} 
+
+.sidebar {
+  grid-column: -1 / -2;
+  margin-top: 30px;
+  margin-right: 20px;
+  background-color: #ffffff;
+  border: 1px solid #E8E6E5;  
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 1px solid #E8E6E5;
+}
+
+.sidebar li {
+  text-align: center;
+  padding: 10px 0;
+  margin: 5px 10px;  
+}
+
+.sidebar li:hover {
+  background-color: #f1f1f1;
+}
+
+.sidebar li a {
+  color: #768892;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;  
+  text-decoration: none;
+}
+
+
+/* content */
+
+.container {
+  display: block;
+  width: 1020px;
+  margin: 0 auto;
+}  
+
+article.card {
+  width: 490px;
+  margin: 0 auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 220px 110px 100px;
+  grid-template-areas: "name name price"
+                       "row row row";
+  gap: 20px;                     
+  
+  background-color: rgb(50, 50, 50);
+  border-radius: 5px;
+  color: grey;
+}
+
+.name {
+  grid-area: name;
+  margin: 0;
+  padding: 0;
+}
+
+.price {
+  grid-area: price;
+  margin: 0;
+  padding: 0;
+  align-self: start;
+  justify-self: end;
+}
+
+.row {
+  grid-area: row;
+  border-top: 1px solid grey;
+ }
+
+/* Form */
+ 
+.main-form {
+  width: 510px;
+  height: auto;
+  margin: 30px auto;
+  padding: 10px;
+  background-color: rgb(50, 50, 50);
+  border-radius: 5px;
+  }
+  
+legend {
+ color: grey;
+ font-family: "Georgia", sans-serif;
+ }
+ 
+fieldset {
+  border-color: grey;
+}
+
+.page-form {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.label-text {
+  color: grey;
+}
+
+.submit-button {
+  align-self: end;
+}  
+
+/* */
+  
+ 
